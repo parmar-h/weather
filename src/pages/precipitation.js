@@ -20,12 +20,14 @@ export default function PrecipitationPage() {
   useEffect(() => {
     const getLocationByIP = async () => {
       try {
-        const response = await fetch('http://ip-api.com/json/');
+        const response = await fetch(
+          'https://api.ipgeolocation.io/ipgeo?apiKey=028272891e6549fb862bbaef98c3df8f'
+        );
         const data = await response.json();
         
-        if (data.status === 'success') {
+        if (response.ok) {
           const weatherResponse = await fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${data.lat}&longitude=${data.lon}&hourly=precipitation`
+            `https://api.open-meteo.com/v1/forecast?latitude=${data.latitude}&longitude=${data.longitude}&hourly=precipitation`
           );
           const weatherData = await weatherResponse.json();
 
@@ -59,6 +61,7 @@ export default function PrecipitationPage() {
     getLocationByIP();
   }, []);
 
+  // Rest of the code remains the same...
   const formatData = (data, selectedDuration) => {
     if (!data) return null;
 

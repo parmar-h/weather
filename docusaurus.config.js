@@ -2,7 +2,7 @@
 const config = {
   title: 'Weather Dashboard',
   tagline: 'Weather data visualization',
-  url: 'https://parmar-h.github.io/weather/',
+  url: 'https://your-domain.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
