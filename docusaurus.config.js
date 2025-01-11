@@ -2,13 +2,13 @@
 const config = {
   title: 'Weather Dashboard',
   tagline: 'Weather data visualization',
-  url: 'https://your-domain.com',
+  url: 'https://parmar-h.github.io/weather/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'your-github-username',
-  projectName: 'weather-dashboard',
+  organizationName: 'parmar-h',
+  projectName: 'weather',
 
   themeConfig: {
     navbar: {
