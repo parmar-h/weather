@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 import WeatherChart from '../components/WeatherChart';
+
+const colors = {
+  primary: '#205493',
+  secondary: '#2e8540',
+  text: '#212121',
+  background: '#ffffff'
+};
 
 const forecastDurations = {
   '24h': { hours: 24, label: 'Next 24 Hours' },
@@ -61,7 +69,6 @@ export default function PrecipitationPage() {
     getLocationByIP();
   }, []);
 
-  // Rest of the code remains the same...
   const formatData = (data, selectedDuration) => {
     if (!data) return null;
 
@@ -133,8 +140,72 @@ export default function PrecipitationPage() {
 
   return (
     <Layout title="Precipitation Forecast">
+      <header 
+        style={{
+          backgroundColor: colors.primary,
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          borderBottom: `1px solid ${colors.background}`
+        }}
+      >
+        <div 
+          className="container"
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '1rem'
+          }}
+        >
+          <h1 style={{ margin: 0, color: colors.background }}>Weather Dashboard</h1>
+          <nav>
+            <div 
+              style={{
+                display: 'flex',
+                gap: '2rem',
+                alignItems: 'center'
+              }}
+            >
+              <Link
+                to="/"
+                style={{
+                  color: colors.background,
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  fontSize: '1.1rem'
+                }}
+              >
+                Home
+              </Link>
+              <Link
+                to="/weather"
+                style={{
+                  color: colors.background,
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  fontSize: '1.1rem'
+                }}
+              >
+                Weather
+              </Link>
+              <Link
+                to="/precipitation"
+                style={{
+                  color: colors.background,
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  fontSize: '1.1rem'
+                }}
+              >
+                Precipitation
+              </Link>
+            </div>
+          </nav>
+        </div>
+      </header>
+
       <main className="container margin-vert--lg">
-        <h1>Precipitation Forecast</h1>
         <form onSubmit={handleCitySearch} className="search-form">
           <input
             type="text"
