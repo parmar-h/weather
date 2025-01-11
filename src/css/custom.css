@@ -1,0 +1,42 @@
+.button {
+  padding: 8px 16px;
+  margin: 4px;
+  border: 2px solid; /* Add border */
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  /* Default text color for better visibility */
+  color: var(--ifm-color-content);
+}
+
+/* Active button styles */
+.button--active.button--kelvin {
+  background-color: khaki !important;
+  color: black !important;
+  border-color: khaki !important;
+}
+
+.button--active.button--celsius {
+  background-color: cyan !important;
+  color: black !important;
+  border-color: cyan !important;
+}
+
+.button--active.button--fahrenheit {
+  background-color: fuchsia !important;
+  color: white !important;
+  border-color: fuchsia !important;
+}
+
+/* Non-active button styles */
+.button:not(.button--active) {
+  border-color: var(--ifm-color-content);
+  opacity: 0.8;
+}
+
+/* Hover effect for non-active buttons */
+.button:not(.button--active):hover {
+  background-color: var(--ifm-color-content-secondary);
+  color: var(--ifm-background-color);
+}
